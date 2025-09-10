@@ -2,10 +2,12 @@
 import streamlit as st
 import pdfplumber
 from pptx import Presentation
+import os
 from openai import OpenAI
 
+
 # Initialize OpenAI client (replace with your API key)
-client = OpenAI(api_key="YOUR_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ----------- File Parsing Helpers -----------
 def extract_text_from_pdf(file):
